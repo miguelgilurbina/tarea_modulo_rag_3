@@ -5,17 +5,13 @@ from .config import (
     COLLECTION_NAME,
     PDF_DIR,
     TOP_K,
+    SCORE_THRESHOLD,
     ensure_env_variables,
     get_qdrant_client,
     get_qdrant_credentials,
     load_environment,
 )
-from .rag_chain import (
-    answer_question,
-    build_rag_chain,
-    build_rag_components,
-    build_retriever,
-)
+from .rag_chain import answer_question, build_rag_chain, build_rag_components
 from .preparation import prepare_corpus
 
 __all__ = [
@@ -23,13 +19,13 @@ __all__ = [
     "COLLECTION_NAME",
     "PDF_DIR",
     "TOP_K",
+    "SCORE_THRESHOLD",
     "load_environment",
     "ensure_env_variables",
     "get_qdrant_credentials",
     "get_qdrant_client",
     "build_rag_chain",
     "build_rag_components",
-    "build_retriever",
     "answer_question",
     "prepare_corpus",
 ]

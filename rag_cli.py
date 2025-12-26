@@ -10,7 +10,7 @@ from rag_modulo3 import answer_question, build_rag_components
 
 
 def main() -> None:
-    llm, rewrite_chain, retriever = build_rag_components()
+    llm, rewrite_chain, vector_store = build_rag_components()
 
     print("✅ Pipeline listo. Escribe una pregunta (Ctrl+C para salir).")
     try:
@@ -18,7 +18,7 @@ def main() -> None:
             user_query = input("\nPregunta: ").strip()
             if not user_query:
                 continue
-            answer = answer_question(user_query, retriever, llm, rewrite_chain)
+            answer = answer_question(user_query, vector_store, llm, rewrite_chain)
             print(f"\n🤖 Respuesta:\n{answer}")
     except KeyboardInterrupt:
         print("\n👋 Hasta luego.")

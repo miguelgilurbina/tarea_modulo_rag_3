@@ -16,7 +16,8 @@ from qdrant_client import QdrantClient
 PDF_DIR: Final[Path] = Path("pdf")
 CACHE_FILE: Final[Path] = Path(".rag_cache.json")
 COLLECTION_NAME: Final[str] = "rag_mod3_pdf_exportaciones"
-TOP_K: Final[int] = 5
+TOP_K: Final[int] = 3
+SCORE_THRESHOLD: Final[float] = 0.75
 
 REQUIRED_ENV_KEYS = ["OPENAI_API_KEY", "QDRANT_URL", "QDRANT_API_KEY"]
 

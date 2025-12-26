@@ -28,3 +28,20 @@ fly auth login
 
 
 12:41
+
+
+actualizar git:
+
+git add .
+git commit -m "Actualización 12:41"     
+git push
+
+
+URL: http://0.0.0.0:8080/
+URL: http://127.0.0.1:8000/
+URL: https://rag-mod3-app.fly.dev/
+
+
+BBDD VECTOR: rag_mod3_pdf_exportaciones
+
+
