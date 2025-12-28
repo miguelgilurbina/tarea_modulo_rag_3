@@ -863,3 +863,136 @@ El sistema está listo para uso en producción y demuestra competencia en diseñ
 - ramon.cornejo.munoz@gmail.com
 
 **Repositorio:** [https://github.com/miguelgilurbina/tarea_modulo_rag_3](https://github.com/miguelgilurbina/tarea_modulo_rag_3)
+
+---
+
+## 13. Evidencias Visuales
+
+Esta sección presenta capturas de pantalla que demuestran el funcionamiento del sistema RAG en producción.
+
+### 13.1 Base Vectorial en Qdrant Cloud
+
+#### Lista de Colecciones
+
+![Colecciones Qdrant](evidencias/evidencia_qdrant_2.jpeg)
+
+**Colección `rag_mod3_pdf_exportaciones`:**
+- **Puntos indexados:** 440 vectores
+- **Dimensionalidad:** 3072 (text-embedding-3-large)
+- **Métrica de distancia:** Cosine
+- **Estado:** 🟢 GREEN (activa y saludable)
+
+#### Información Detallada de la Colección
+
+![Info Colección Qdrant](evidencias/evidencia_qdrant_3.jpeg)
+
+Configuración técnica de la colección mostrando:
+- Status: "green"
+- Points count: 440
+- Vector size: 3072
+- Distance metric: Cosine similarity
+- Optimizer status: "ok"
+
+#### Ejemplo de Punto Individual con Metadata
+
+![Punto Qdrant](evidencias/evidencia_qdrant_1.jpeg)
+
+Detalle de un chunk indexado mostrando:
+- **Contenido:** Fragmento del documento sobre Japón
+- **Metadata enriquecida:**
+  - `source`: Ruta del documento PDF
+  - `titulo`: "Claves para Negocios con Japón 2025"
+  - `resumen`: Descripción del empresario japonés
+  - `categoria`: "Negocios Internacionales"
+- **Vector:** 3072 dimensiones
+
+### 13.2 Interfaz LangServe Playground
+
+![LangServe Playground](evidencias/evidencia_langserve_playground.png)
+
+Interfaz interactiva del sistema disponible en `/rag/playground` para:
+- Realizar consultas en tiempo real
+- Visualizar respuestas estructuradas
+- Verificar citación de fuentes
+
+### 13.3 Ejemplos de Consultas Evaluadas
+
+#### Ejemplo 1: Pregunta Respondible
+
+![Pregunta Respondible](evidencias/pregunta_respondible.png)
+
+**Query:** Consulta sobre información disponible en los documentos
+
+**Respuesta del sistema:**
+- ✅ Información precisa extraída de los documentos
+- ✅ Citación correcta de fuentes
+- ✅ Respuesta estructurada y profesional
+
+#### Ejemplo 2: Pregunta No Respondible
+
+![Pregunta No Respondible](evidencias/pregunta_no_respondible.png)
+
+**Query:** Consulta sobre tema fuera del dominio
+
+**Respuesta del sistema:**
+- ✅ Reconocimiento honesto de limitaciones
+- ✅ No inventa información (0% alucinaciones)
+- ✅ Mensaje claro sugiriendo reformular
+
+### 13.4 Trazas de LangSmith
+
+#### Trace 1: Manejo de Pregunta No Respondible
+
+![LangSmith - No Respondible](evidencias/evidencia_langsmith_1.jpeg)
+
+**Pregunta:** "¿Qué equipos de fútbol son más populares en España?"
+
+**Métricas:**
+- Status: ✅ Success
+- Latency: 1.50s
+- Tokens: 56
+- Costo: $0.00023
+
+**Resultado:** Sistema correctamente identifica que la información no está disponible y responde apropiadamente.
+
+#### Trace 2: Pregunta Respondible con Información Completa
+
+![LangSmith - Respondible](evidencias/evidencia_langsmith_2.jpeg)
+
+**Pregunta:** "¿Qué sectores productivos destaca el análisis NoCobre/NoLitio con mayor crecimiento?"
+
+**Métricas:**
+- Status: ✅ Success
+- Latency: 3.26s
+- Tokens: 1,637
+- Costo: $0.005225
+
+**Resultado:** Sistema proporciona respuesta detallada basada en el documento NoCobre/NoLitio, mencionando el crecimiento del 9.4% y explicando el contexto.
+
+### 13.5 Análisis de las Evidencias
+
+**Validaciones demostradas:**
+
+1. **Base vectorial operativa:**
+   - ✅ 440 chunks indexados correctamente
+   - ✅ Embeddings de alta dimensionalidad (3072)
+   - ✅ Metadata enriquecida por GPT-4o
+   - ✅ Colección saludable en Qdrant Cloud
+
+2. **Sistema RAG funcionando:**
+   - ✅ Retrieval semántico efectivo
+   - ✅ Generación de respuestas precisas
+   - ✅ Citación consistente de fuentes
+   - ✅ Manejo correcto de limitaciones
+
+3. **Monitoreo con LangSmith:**
+   - ✅ Trazabilidad completa de consultas
+   - ✅ Métricas de latencia y costos
+   - ✅ Debugging de cadenas LCEL
+   - ✅ Validación de comportamiento
+
+4. **Calidad del sistema:**
+   - ✅ 0% de alucinaciones
+   - ✅ Respuestas estructuradas
+   - ✅ Latencias aceptables (1.5-3.5s)
+   - ✅ Costos optimizados
