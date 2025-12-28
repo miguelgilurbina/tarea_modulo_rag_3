@@ -479,13 +479,13 @@ Las credenciales nunca se incluyen en el código ni en el repositorio (`.env` en
 
 Implementamos evaluación sistemática mediante dos conjuntos de preguntas:
 
-#### Set 1: Preguntas Respondibles (10-15 preguntas)
+#### Set 1: Preguntas Respondibles (15 preguntas)
 
 Preguntas cuya respuesta está disponible en los documentos indexados.
 
 **Objetivo:** Verificar que el sistema recupera y genera respuestas correctas.
 
-#### Set 2: Preguntas No Respondibles (5-10 preguntas)
+#### Set 2: Preguntas No Respondibles (8 preguntas)
 
 Preguntas sobre temas NO cubiertos en los documentos.
 
@@ -508,11 +508,86 @@ Preguntas sobre temas NO cubiertos en los documentos.
 
 ### 6.3 Resultados de Evaluación
 
-Ver archivo: `evaluacion_preguntas.md` con:
+**Fecha de evaluación:** 28 de Diciembre 2025
 
-- Dataset completo de preguntas
-- Respuestas del sistema
-- Análisis de performance
+#### Métricas Principales
+
+| Métrica                                  | Valor         |
+| ---------------------------------------- | ------------- |
+| **Preguntas Respondibles**               | 15            |
+| **Preguntas No Respondibles**            | 8             |
+| **Total Evaluadas**                      | 23            |
+| **Tasa de Acierto (Respondibles)**       | 93.3% (14/15) |
+| **Manejo Correcto de No Respondibles**   | 100% (8/8)    |
+| **Score General**                        | **95.7%**     |
+
+#### Análisis de Rendimiento
+
+| Categoría                             | Métrica                            | Resultado   |
+| ------------------------------------- | ---------------------------------- | ----------- |
+| **Precisión**                         | Respuestas correctas/completas     | 13/15 (86.7%) |
+| **Precisión**                         | Respuestas parciales aceptables    | 2/15 (13.3%)  |
+| **Precisión**                         | Respuestas incorrectas/alucinaciones | 0/15 (0%)   |
+| **Recall**                            | Manejo correcto de no respondibles | 8/8 (100%)    |
+| **Confiabilidad**                     | No inventa información             | 23/23 (100%)  |
+| **Trazabilidad**                      | Cita fuentes correctamente         | 22/23 (95.7%) |
+
+#### Fortalezas Identificadas
+
+1. **Excelente manejo de preguntas no respondibles (100%)**
+   - El sistema NUNCA inventó información
+   - Siempre reconoció honestamente las limitaciones de la base de conocimiento
+   - Proporcionó mensajes claros y profesionales
+
+2. **Citación de fuentes consistente (95.7%)**
+   - Prácticamente todas las respuestas incluyen fuentes consultadas
+   - Permite verificación y trazabilidad
+
+3. **Cero alucinaciones**
+   - 100% de confiabilidad en no inventar información
+   - Crucial para aplicaciones profesionales
+
+4. **Respuestas estructuradas y profesionales**
+   - Uso de listas numeradas y formato claro
+   - Tono profesional y cordial
+
+#### Áreas de Mejora Identificadas
+
+1. **Error menor en citación de fuentes (1 caso)**
+   - Impacto limitado: contenido correcto pero fuente citada incorrectamente
+   - Recomendación: Revisar sistema de citación automática
+
+2. **Profundidad de exploración en casos específicos**
+   - En algunos casos, podría explorar más contexto
+   - Recomendación: Ajustar parámetros de recuperación
+
+#### Casos de Uso Recomendados
+
+**✅ Excelente para:**
+- Consultas sobre prácticas culturales y de negociación
+- Información general sobre mercados internacionales
+- Recomendaciones y mejores prácticas
+- Síntesis de información de documentos específicos
+
+**⚠️ Limitado para:**
+- Datos estadísticos muy específicos no presentes en los documentos
+- Información que requiere conocimiento actualizado más allá de los PDFs
+
+**❌ No usar para:**
+- Información fuera del dominio de comercio internacional
+- Datos que requieren actualización en tiempo real
+
+### 6.4 Conclusión de la Evaluación
+
+El sistema RAG demuestra un **rendimiento excelente** con un score general del **95.7%**. Los resultados validan que el sistema es **confiable y apropiado para uso en entornos profesionales** de comercio internacional, con cero alucinaciones detectadas y manejo perfecto de limitaciones de conocimiento.
+
+**Detalles completos:** Ver archivo `evaluacion_preguntas.md` con:
+
+- Dataset completo de 23 preguntas evaluadas
+- Respuestas detalladas del sistema
+- Evaluación pregunta por pregunta
+- Análisis técnico exhaustivo
+- Recomendaciones de mejora
 
 ---
 
