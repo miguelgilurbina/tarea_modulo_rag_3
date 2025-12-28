@@ -854,6 +854,12 @@ El sistema está listo para uso en producción y demuestra competencia en diseñ
 
 ---
 
-**Desarrollado por:** [Nombres del equipo]
-**Contacto:** [Email del equipo]
-**Repositorio:** [[URL del repositorio Git](https://github.com/fsalfate1/tarea_modulo3_grupal)]
+**Desarrollado por:** Miguel Gil, Jorge Román, Fabián Salfate, Ramón Cornejo
+
+**Contacto:**
+- miguel.gil.9210@gmail.com
+- fsalfate1@gmail.com
+- jorge.roman.butron@gmail.com
+- ramon.cornejo.munoz@gmail.com
+
+**Repositorio:** [https://github.com/miguelgilurbina/tarea_modulo_rag_3](https://github.com/miguelgilurbina/tarea_modulo_rag_3)
